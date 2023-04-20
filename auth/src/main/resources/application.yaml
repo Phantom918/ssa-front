@@ -1,0 +1,39 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: auth-app
+  datasource:
+    username: root
+    password: hjXL327918
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/security?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+  cloud:
+    nacos:
+      discovery:
+        register-enabled: true
+        server-addr: 127.0.0.1:8848
+    compatibility-verifier:
+      enabled: false
+
+
+debug: true
+
+logging:
+  level:
+    root: info
+    org.springframework:
+      web: info
+      security: info
+      security.oauth2: info
+      # spring boot 启动的时有大量的 CONDITIONS EVALUATION REPORT 信息，此处设置只打印 error 级别的信息
+      boot.autoconfigure: error
+#      web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+      security.web.FilterChainProxy: trace # ???????
+      security.web.access.ExceptionTranslationFilter: trace #????
+# Mybatis 日志打印
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

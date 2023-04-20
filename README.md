@@ -2,7 +2,7 @@
 
 ### 微服务模块说明
 
-**auth**: 作为授权下发token的服务，使用最新的Spring Authorization Server实现。
+**auth**: 作为登录授权下发token的服务，使用最新的Spring Authorization Server 1.0.1实现。
 
 **gateway**: 作为访问其它微服务的网关，认证和鉴权在这里作为总入口，其它实际业务的服务模块就不用再关注认证和鉴权的，统一由网关来实现，使用Spring Cloud Gateway实现。
 
